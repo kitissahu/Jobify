@@ -1,0 +1,64 @@
+<%- include("partials/headereditform") %>
+
+
+<h1 class="text-center mb-5 mt-5 wow fadeInUp" data-wow-delay="0.1s">Edit Job Details</h1>
+<form action="/updatejob/<%= jobid %>" method="post" enctype="multipart/form-data" class="form wow fadeInUp" data-wow-delay="0.1s">
+    <p class="field required">
+        <label class="label required" for="name">Job name</label>
+        <input class="text-input" id="name" value="<%= jobname %>" name="jobname" type="text" />
+    </p>
+    <p class="field required half">
+        <label class="label" for="email">Published on</label>
+        <input class="text-input" id="publishdate" value="<%= publishdate %>" name="publishdate" type="date" />
+    </p>
+    <p class="field required half">
+        <label class="label" for="email">Date line</label>
+        <input class="text-input" id="datelinedate" value="<%= datelinedate %>" name="datelinedate" type="date" />
+    </p>
+    <p class="field required half">
+        <label class="label" for="email">Vacancy</label>
+        <input class="text-input" id="vacancy" value="<%= vacancy %>" name="vacancy" type="number" />
+    </p>
+    <p class="field required half">
+        <label class="label" for="phone">Salary</label>
+        <input class="text-input" id="salary" value="<%= salary %>" name="salary" type="number" />
+    </p>
+    <p class="field required">
+        <label class="label required" for="name">Location</label>
+        <input class="text-input" id="location" value="<%= location %>" name="location" type="text" />
+    </p>
+    <div class="field">
+        <label class="label required">Job nature</label>
+        <ul class="options">
+            <li class="option">
+                <input class="option-input" id="option-0" name="option" type="radio" value="parttime" <% if (jobnature === 'Part Time') { %>checked<% } %> />
+                <label class="option-label" for="option-0">Part Time</label>
+            </li>
+            <li class="option">
+                <input class="option-input" id="option-1" name="option" type="radio" value="fulltime" <% if (jobnature === 'Full Time') { %>checked<% } %> />
+                <label class="option-label" for="option-1">Full Time</label>
+            </li>
+        </ul>
+    </div>
+    <p class="field required">
+        <label class="label" for="about">Job descriptions</label>
+        <textarea class="textarea" cols="50" id="description" name="description" rows="4"><%= description %></textarea>
+    </p>
+    <p class="field required">
+        <label class="label required" for="name">Qualifications</label>
+        <input class="text-input" id="qualification" value="<%= qualification %>" name="qualification" type="text" />
+    </p>
+    <p class="field required">
+        <label class="label" for="about">Company details</label>
+        <textarea class="textarea" cols="50" id="companydetail" name="companydetail" rows="4"><%= companydetail %></textarea>
+    </p>
+    <!-- <p class="field required half">
+        <label class="label" for="email">Company Image</label>
+        <input class="text-input" id="companyimg" name="companyimg"  type="file" />
+    </p> -->
+    <p class="field half">
+        <input class="button" type="submit" value="Edit" />
+    </p>
+</form>
+
+<%- include("partials/footer"); %>

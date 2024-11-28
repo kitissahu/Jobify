@@ -1,0 +1,56 @@
+<body>
+    <div class="bg-white p-0">
+        <!-- Spinner Start -->
+        <!-- <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div> -->
+        <!-- Spinner End -->
+
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+            <a href="/" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+                <h1 class="m-0 text-primary">Jobify</h1>
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="/" class="nav-item nav-link active">Home</a>
+                    <a href="/about" class="nav-item nav-link">About</a>
+                    <a href="/joblist" class="nav-item nav-link">Job List</a>
+                    <!-- <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="/category" class="dropdown-item">Job Category</a>
+                            <a href="/testimonial" class="dropdown-item">Testimonial</a>
+                        </div>
+                    </div> -->
+                    <a href="/contact" class="nav-item nav-link">Contact</a>
+                    <% if (typeof username === 'undefined') { %>
+                    <a href="/login" class="nav-item nav-link">Login</a>
+                    <a href="/register" class="nav-item nav-link">Registration</a>
+                    <% } %><% if (typeof username !== 'undefined' && username) { %>
+                    <a href="/logout" class="nav-item nav-link">logout</a>
+                    <a class="nav-item nav-link" href="#">hello, <%= username %></a>
+                    <% } %>
+                    <% if (typeof id !== 'undefined' && id) { %>
+                    <a href="/alljob/<%= id %>" class="nav-item nav-link">Post jobs</a>
+                    <% } %>
+                </div>
+                <% if (typeof id !== 'undefined' && id) { %>
+                <a href="/form" class="btn btn-primary rounded-6 py-4 px-lg-5 d-none d-lg-block">Post A Job<i
+                        class="fa fa-arrow-right ms-3"></i></a>
+                <% } %>
+
+            </div>
+        </nav>
+        <!-- Navbar End -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<%- include("partials/headerform") %>
+
+<h1 class="text-center mb-5 mt-5 wow fadeInUp" data-wow-delay="0.1s">Job Details Form</h1>
+<form action="/jobform" method="post" enctype="multipart/form-data" class="form wow fadeInUp" data-wow-delay="0.1s">
+    <p class="field required">
+        <label class="label required" for="name">Job name</label>
+        <input class="text-input" id="name" name="jobname" required type="text" />
+    </p>
+    <p class="field required half">
+        <label class="label" for="email">Published on</label>
+        <input class="text-input" id="publishdate" name="publishdate" required type="date" />
+    </p>
+    <p class="field required half">
+        <label class="label" for="email">Date line</label>
+        <input class="text-input" id="datelinedate" name="datelinedate" required type="date" />
+    </p>
+    <p class="field required half">
+        <label class="label" for="email">Vacancy</label>
+        <input class="text-input" id="vacancy" name="vacancy" required type="number" />
+    </p>
+    <p class="field required half">
+        <label class="label" for="phone">Salary</label>
+        <input class="text-input" id="salary" name="salary" required type="number" />
+    </p>
+    <p class="field required">
+        <label class="label required" for="name">Location</label>
+        <input class="text-input" id="location" name="location" required type="text" />
+    </p>
+    <div class="field">
+        <label class="label required">Job nature</label>
+        <ul class="options">
+            <li class="option">
+                <input class="option-input" id="option-0" name="option" type="radio" value="parttime" />
+                <label class="option-label" for="option-0">Part Time</label>
+            </li>
+            <li class="option">
+                <input class="option-input" id="option-1" name="option" type="radio" value="fulltime" />
+                <label class="option-label" for="option-1">Full Time</label>
+            </li>
+        </ul>
+    </div>
+    <p class="field required">
+        <label class="label" for="about">Job descriptions</label>
+        <textarea class="textarea" cols="50" id="description" name="description" rows="4"></textarea>
+    </p>
+    <p class="field required">
+        <label class="label required" for="name">Qualifications</label>
+        <input class="text-input" id="qualification" name="qualification" required type="text" />
+    </p>
+    <p class="field required">
+        <label class="label" for="about">Company details</label>
+        <textarea class="textarea" cols="50" id="companydetail" name="companydetail" rows="4"></textarea>
+    </p>
+    <p class="field required half">
+        <label class="label" for="email">Company Image</label>
+        <input class="text-input" id="companyimg" name="companyimg" required type="file" />
+    </p>
+    <p class="field half">
+        <input class="button" type="submit" value="Post" />
+    </p>
+</form>
+
+<%- include("partials/footer"); %>

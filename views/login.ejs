@@ -1,0 +1,75 @@
+<%- include("partials/headerlogin") %>
+<div class="main">
+    <!-- Sing in  Form -->
+    <section class="sign-in">
+        <div class="containerr">
+            <div class="signin-content">
+                <div class="signin-image">
+                    <figure>
+                        <img src="img/signin-image.jpg" alt="sing up image" />
+                    </figure>
+                    <a href="/register" class="signup-image-link">Create an account</a>
+                </div>
+
+                <div class="signin-form">
+                    <h2 class="form-title">Sign In</h2>
+
+                    <% if (typeof errorMessage !== 'undefined') { %>
+                    <div id="alert-message" class="custom-alert">
+                        <p><%= errorMessage %></p>
+                    </div>
+                    <script>
+                        // JavaScript to display the alert message
+                        setTimeout(function () {
+                            var alertMessage = document.getElementById('alert-message');
+                            alertMessage.style.display = 'none';
+                        }, 2000); // Hide the alert message after 2 seconds
+                    </script>
+                    <% } %>
+
+                    <form method="post" action="/login" class="register-form" id="login-form">
+                        <div class="form-group">
+                            <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="username" id="username" placeholder="User Name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" name="password" id="password" placeholder="Password" />
+                        </div>
+                        <div class="cntr form-group">
+  
+                            <label for="opt1" class="radio">
+                              <input type="radio" value="jobSeeker" name="rdo" id="opt1" class="hidden"/>
+                              <span class="label"></span>Job Seeker
+                            </label>
+                            
+                            <label for="opt2" class="radio">
+                              <input type="radio" value="recruiter" name="rdo" id="opt2" class="hidden"/>
+                              <span class="label"></span>Recruiter
+                            </label>
+                            
+                          </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="send" id="signin" class="form-submit" value="submit" />
+                        </div>
+                    </form>
+                    <div class="social-login">
+                        <span class="social-label">Or login with</span>
+                        <ul class="socials">
+                            <li>
+                                <a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<%- include("partials/footer"); %>
